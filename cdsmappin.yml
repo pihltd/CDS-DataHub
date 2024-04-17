@@ -20,7 +20,6 @@ Exact:
   - file_size
   - md5sum
   - file_url_in_cds
-  - experimental_strategy_and_data_subtype
   genomic_info:
   - library_id
   - bases
@@ -90,6 +89,9 @@ Partial:
   - program.program_acronym: program_acronym
   - data_types: study_data_types
 Manual:
+  file:
+    - file_id: guid
+    - experimental_strategy_and_data_subtypes: library_strategy
   diagnosis:
    - participant.study_participant_id: participant_id
   participant:
@@ -108,7 +110,6 @@ Unmapped:
   - days_to_last_known_status
   - crdc_id
   file:
-  - file_id
   - file_description
   - submission_version
   - crdc_id

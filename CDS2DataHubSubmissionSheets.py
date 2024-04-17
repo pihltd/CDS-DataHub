@@ -2,6 +2,7 @@
 import pandas as pd
 import argparse
 import yaml
+import uuid
 
 
 def readConfigs(yamlfile):
@@ -87,6 +88,13 @@ def main(args):
     #Put the sheet name in all rows of the type column
     for sheet, sheet_df in dhsheets.items():
         sheet_df['type'] = sheet
+
+    #CDS requires a genomic_info_id in the genomics sheet, and a diagnosis_id in the diagnosis sheet.  Both should be provided by DH
+    sheets = {'diagnosis': ['diagnosis_id', 'study_diagnosis_id'], 'genomic_info':['genomic_info_id']}
+    for sheet, fields in sheets.items():
+        temp_df = dhsheets[sheet]
+        for field in fields:
+            temp_df[field] = [uuid.uuid4() for _ in range(len(temp_df.index))]
 
     for sheet, df in dhsheets.items():
         filename = configs['Ops']['output_path']+configs['Ops']['output_prefix']+sheet+".tsv"

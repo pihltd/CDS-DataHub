@@ -243,7 +243,7 @@ Templates:
     - file_size
     - md5sum
     - file_url_in_cds
-    - experimental_strategy_and_data_subtype
+    - experimental_strategy_and_data_subtypes
     - submission_version
     - crdc_id
 Ops:
@@ -292,4 +292,3 @@ SubSheet2Model_Mapping:
   'guid' :
     - 'file_id'
     - 'file_url_in_cds'
-Model2SubSheet_Mapping:
