@@ -84,9 +84,9 @@ def main(args):
     for sheet, sheet_df in dhsheets.items():
         dhsheets[sheet] = sheet_df.drop_duplicates()
 
-    #Put the sheet name in the first row of the type column
+    #Put the sheet name in all rows of the type column
     for sheet, sheet_df in dhsheets.items():
-        sheet_df.loc[0,'type'] = sheet
+        sheet_df['type'] = sheet
 
     for sheet, df in dhsheets.items():
         filename = configs['Ops']['output_path']+configs['Ops']['output_prefix']+sheet+".tsv"
