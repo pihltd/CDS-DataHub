@@ -95,6 +95,11 @@ def main(args):
         temp_df = dhsheets[sheet]
         for field in fields:
             temp_df[field] = [uuid.uuid4() for _ in range(len(temp_df.index))]
+    
+    #Files need to have a submission version supplied.
+    temp_df = dhsheets['file']
+    temp_df['submission_version'] = configs['Ops']['submission_version']
+
 
     for sheet, df in dhsheets.items():
         filename = configs['Ops']['output_path']+configs['Ops']['output_prefix']+sheet+".tsv"

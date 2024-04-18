@@ -250,6 +250,7 @@ Ops:
   input_file: "/media/vmshare/phs0002479_PDXNet_CDS_metadata_v1.3.3_20240318_CatchERR20240318.xlsx"
   output_path: "/home/pihl/dh_sheets/"
   output_prefix: "PDXNet_"
+  submission_version: 1
 SubSheet2Model_Mapping:
   'role_or_affiliation' : 'primary_investigator_name'
   'title' : 'primary_investigator_name'
